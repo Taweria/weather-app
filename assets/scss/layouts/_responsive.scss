@@ -1,0 +1,18 @@
+@media only screen and (min-width: 1024px) {
+
+    body{
+        overflow-y: hidden;
+    }
+
+    .forecast-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 97%;
+        height: 80vh;
+        overflow-x: hidden;
+        background-color: white;
+        margin: 1rem 1rem;
+    }
+}
