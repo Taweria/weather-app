@@ -1,4 +1,4 @@
-const apiKey = import.meta.env.VITE_apiKey;
+const apiKey = import.meta.secrets.VITE_apiKey;
 const form = document.querySelector("form");
 const input = document.querySelector("input");
 const forecastContainer = document.querySelector(".forecast-container");
@@ -17,7 +17,6 @@ form.addEventListener("submit", (event) => {
     loader.style.display = "block";
 
     setTimeout(() => {
-
 
             fetch(url)
             .then(response => response.json())
