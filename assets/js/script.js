@@ -18,7 +18,6 @@ form.addEventListener("submit", (event) => {
 
     setTimeout(() => {
 
-
             fetch(url)
             .then(response => response.json())
             .then(data => {
