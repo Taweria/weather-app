@@ -1,4 +1,4 @@
-const apiKey = import.meta.env.VITE_apiKey;
+// const apiKey = import.meta.env.VITE_apiKey;
 const form = document.querySelector("form");
 const input = document.querySelector("input");
 const forecastContainer = document.querySelector(".forecast-container");
