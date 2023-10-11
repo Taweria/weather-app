@@ -23,7 +23,9 @@ form.addEventListener("submit", (event) => {
             .then(response => response.json())
             .then(data => {
                 
-                forecastContainer.innerHTML = "";
+                while (forecastContainer.firstChild) {
+                    forecastContainer.removeChild(forecastContainer.firstChild);
+                }
                 home.style.display = "none";
                     
                 loader.style.display = "none";
@@ -47,13 +49,31 @@ form.addEventListener("submit", (event) => {
                         const iconUrl = `https://openweathermap.org/img/w/${forecast.weather[0].icon}.png`;
                         const div = document.createElement("div");
                         div.classList.add("forecast");
-                        div.innerHTML = `
-                                <div class="forecast-icon"><img src="${iconUrl}" alt="${forecast.weather[0].description}"></div>
-                                <div class="forecast-date">${date.toLocaleDateString()}</div>
-                                <div class="forecast-temp">${Math.round(forecast.main.temp - 273.15)}°C</div>
-                                <div class="forecast-description">${forecast.weather[0].description}</div>
-                            
-                        `;
+
+                        const forecastIcon = document.createElement("div");
+                        forecastIcon.classList.add("forecast-icon");
+
+                        const img = document.createElement("img");
+                        img.src = iconUrl;
+                        img.alt = forecast.weather[0].description;
+                        forecastIcon.appendChild(img);
+                        div.appendChild(forecastIcon);
+
+                        const forecastDate = document.createElement("div");
+                        forecastDate.classList.add("forecast-date");
+                        forecastDate.textContent = date.toLocaleDateString();
+                        div.appendChild(forecastDate);
+
+                        const forecastTemp = document.createElement("div");
+                        forecastTemp.classList.add("forecast-temp");
+                        forecastTemp.textContent = `${Math.round(forecast.main.temp - 273.15)}°C`;
+                        div.appendChild(forecastTemp);
+
+                        const forecastDescription = document.createElement("div");
+                        forecastDescription.classList.add("forecast-description");
+                        forecastDescription.textContent = forecast.weather[0].description;
+                        div.appendChild(forecastDescription);
+
                         forecastContainer.appendChild(div);
                 }
                 
@@ -66,7 +86,7 @@ form.addEventListener("submit", (event) => {
 });
 
 homeBtn.addEventListener("click", () => {
-    forecastContainer.innerHTML = "";
+    forecastContainer.textContent = "";
     home.style.display = "flex";
 });
 
