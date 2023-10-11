@@ -1,4 +1,4 @@
-// const apiKey = import.meta.env.VITE_apiKey;
+const apiKey = import.meta.env.VITE_apiKey;
 const form = document.querySelector("form");
 const input = document.querySelector("input");
 const forecastContainer = document.querySelector(".forecast-container");
@@ -11,7 +11,7 @@ loader.style.display = "none";
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     const city = input.value;
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${{secrets.apiKey}}`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
   
 
     loader.style.display = "block";
