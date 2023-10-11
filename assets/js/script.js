@@ -11,7 +11,7 @@ loader.style.display = "none";
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     const city = input.value;
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${VITE_APIKEY}`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKEY}`;
   
 
     loader.style.display = "block";
