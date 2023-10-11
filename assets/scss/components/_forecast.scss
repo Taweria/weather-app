@@ -8,11 +8,13 @@
     margin-bottom: 2rem;
     width: 100%;
     margin: 2rem 0;
+    background-color: transparent;
     
 
     .forecast {
-        background-color: #007bff;
+        background-color: #007bff57;
         color: white;
+        backdrop-filter:blur(15px);
         border-radius: 15px;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
