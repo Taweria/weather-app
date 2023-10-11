@@ -30,7 +30,7 @@ form.addEventListener("submit", (event) => {
                 loader.style.display = "none";
                 
                 let lastDate = null;
-                for(let i = 0; i < data.list.length; i ++){
+                for(let i = 0; i < data.list.length; i++){
     
                         const forecast = data.list[i];
                         const date = new Date(forecast.dt_txt);
