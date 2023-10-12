@@ -144,8 +144,9 @@ form.addEventListener("submit", (event) => {
 
 
       
+        })
     }, 1000);
-});});
+});
 
 //home button
 
