@@ -1,10 +1,12 @@
 const apiKey = import.meta.env.VITE_apiKey;
+const accessKey = import.meta.env.VITE_accessKey;
 const form = document.querySelector("form");
 const input = document.querySelector("input");
 const forecastContainer = document.querySelector(".forecast-container");
 const home = document.querySelector(".home");
 const homeBtn = document.querySelector(".home-btn");
 const loader = document.querySelector(".loader");
+const photo = document.querySelector(".photo");
 
 loader.style.display = "none";
 
@@ -77,8 +79,18 @@ form.addEventListener("submit", (event) => {
                 }
                 
             })
-            .catch(error => console.log(error));
+            .catch(error => console.log("error fetching api"));
         
+            fetch(`https://api.unsplash.com/photos/random?client_id=${accessKey}&query=${city}&count=1`)
+                .then(response => response.json())
+                .then(data => {
+                    const img = document.createElement("img");
+                    img.src =  data[0].urls.regular;
+                    img.alt = city;
+                    photo.appendChild(img);
+                })
+                .catch(error => console.log("error fetching api"));
+
 
       
     }, 1000);
@@ -87,5 +99,7 @@ form.addEventListener("submit", (event) => {
 homeBtn.addEventListener("click", () => {
     forecastContainer.textContent = "";
     home.style.display = "flex";
+    photo.textContent = "";
 });
+
 
