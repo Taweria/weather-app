@@ -195,6 +195,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 15px;
 }
 
 body {
@@ -219,6 +220,9 @@ header h1 {
 }
 
 @media only screen and (min-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
   .forecast-container {
     display: flex;
     flex-direction: row;
