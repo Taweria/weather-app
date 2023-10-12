@@ -102,11 +102,11 @@ form.addEventListener("submit", (event) => {
     }, 1000);
 });
 
+//home button
+
 homeBtn.addEventListener("click", () => {
     forecastContainer.textContent = "";
     home.style.display = "flex";
     photo.textContent = "";
     titleCity.textContent = "";
 });
-
-
