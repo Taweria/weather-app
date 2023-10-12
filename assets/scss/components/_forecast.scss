@@ -1,3 +1,13 @@
+.title{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .forecast-container {
     display: flex;
     flex-direction: column;
@@ -9,7 +19,7 @@
     width: 100%;
     margin: 2rem 0;
     background-color: transparent;
-    
+
 
     .forecast {
         background-color: #007bff57;

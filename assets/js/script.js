@@ -7,6 +7,7 @@ const home = document.querySelector(".home");
 const homeBtn = document.querySelector(".home-btn");
 const loader = document.querySelector(".loader");
 const photo = document.querySelector(".photo");
+const titleCity = document.querySelector(".title");
 
 loader.style.display = "none";
 
@@ -30,6 +31,11 @@ form.addEventListener("submit", (event) => {
                 home.style.display = "none";
                     
                 loader.style.display = "none";
+
+                const title = document.createElement("h2");
+                title.textContent = city;
+                title.style.textTransform = "uppercase";
+                titleCity.appendChild(title);
                 
                 let lastDate = null;
                 for(let i = 0; i < data.list.length; i++){
@@ -47,13 +53,13 @@ form.addEventListener("submit", (event) => {
                             lastDate = date;
                         }
 
+                       
+                        
                         const iconUrl = `https://openweathermap.org/img/w/${forecast.weather[0].icon}.png`;
                         const div = document.createElement("div");
                         div.classList.add("forecast");
-
                         const forecastIcon = document.createElement("div");
                         forecastIcon.classList.add("forecast-icon");
-
                         const img = document.createElement("img");
                         img.src = iconUrl;
                         img.alt = forecast.weather[0].description;
@@ -100,6 +106,7 @@ homeBtn.addEventListener("click", () => {
     forecastContainer.textContent = "";
     home.style.display = "flex";
     photo.textContent = "";
+    titleCity.textContent = "";
 });
 
 

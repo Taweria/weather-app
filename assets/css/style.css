@@ -137,6 +137,16 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #0069d9;
 }
 
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .forecast-container {
   display: flex;
   flex-direction: column;
